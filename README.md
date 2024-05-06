@@ -1,6 +1,6 @@
 # NanoLegion Bot
 
-This Python script automates browser interactions using Selenium WebDriver. It spins multiple browser instances attached to separate nodes in a binary tree.
+This Python script automates browser interactions using Selenium WebDriver. It spins multiple browser instances attached to separate nodes on a binary tree.
 
 Features
 
