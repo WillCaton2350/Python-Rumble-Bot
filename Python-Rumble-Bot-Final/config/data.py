@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from fake_useragent import UserAgent
 from time import sleep
 
-@dataclass
+@dataclass(frozen=True)
 class nums:
     node_data: int = 0
     max_retries:int = 3 
