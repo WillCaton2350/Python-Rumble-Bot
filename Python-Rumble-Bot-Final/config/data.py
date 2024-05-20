@@ -15,11 +15,10 @@ class nums:
 @dataclass
 class urls:
     url_dict = {
-    1:'https://www.example.com',
-    2:'https://www.example.com',
-    3:'https://www.example.com',
-    4:'https://www.example.com',
-    
+    1:'https://www.example_1.com',
+    2:'https://www.example_2.com',
+    3:'https://www.example_3.com',
+    4:'https://www.example_4.com',
     }
 
 class locators:
