@@ -4,7 +4,6 @@ from time import sleep
 
 @dataclass(frozen=True)
 class nums:
-    node_data: int = 0
     max_retries:int = 3 
     retry_delay: int = 0 
     retries: int = 0
