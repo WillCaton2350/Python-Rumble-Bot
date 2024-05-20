@@ -10,7 +10,7 @@ class nums:
     retries: int = 0
     status: int = 200
     counter: int = 0
-    num_executions: int = 100
+    num_nodes: int = 100
 
 @dataclass
 class urls:
