@@ -1,22 +1,12 @@
 from bot.main import web_driver
 from config.data import *
+from bot.src import source
 
 class node:
     def __init__(self,_):
-        self.data = self.activate()
+        self.data = source.activate()
         self.left = None
-        self.right = None
-
-    def activate(self):
-        for i in range(nums.num_nodes):
-            func = web_driver()
-            func.start_driver()
-            func.start_browser()
-            func.quit_driver()
-            print(f"execution: {i} {func}")
-            i += 1
-        print(f'node: {nums.counter} {node}')
-        nums.counter += 1        
+        self.right = None 
 
 class binary_tree:
     def main(self,root:node):
