@@ -1,6 +1,5 @@
-from bot.main import web_driver
-from config.data import *
 from bot.src import source
+from config.data import *
 
 class node:
     def __init__(self,_):
