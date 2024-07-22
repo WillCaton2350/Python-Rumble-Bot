@@ -24,7 +24,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/willcaton2350/python-rumble-bot:main .
+          docker build -t ghcr.io/willcaton2350/python-rumble-bot:main -f Python-Rumble-Bot-Final/Dockerfile Python-Rumble-Bot-Final/
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v2
