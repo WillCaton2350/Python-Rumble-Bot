@@ -27,6 +27,7 @@ spec:
       imagePullSecrets:
       - name: ghcr-secret
       # Name of the kubernetes secret
+      # KUBECTL COMMAND TO CREATE THE KUBERNETES SECRET THAT WILL PULL THE DOCKER IMAGE FROM THE GHCR INTO THE KUBERNETES CLUSTER
       # kubectl create secret docker-registry ghcr-secret \
       #  --docker-server=ghcr.io \
       # --docker-username=YOUR_GITHUB_USERNAME \
