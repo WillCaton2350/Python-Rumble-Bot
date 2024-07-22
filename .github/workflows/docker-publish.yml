@@ -46,11 +46,14 @@ jobs:
         env:
           TAGS: ghcr.io/willcaton2350/python-rumble-bot:main
           DIGEST: sha256:a43b405e0ba8bfbd9ad479da6a4c927110fcfb12483b6655c0ac55b74166c95b
+          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
         run: |
           echo "Signing image with cosign..."
           echo "${TAGS}" | xargs -I {} cosign sign --yes --key cosign.key {}@${DIGEST}
 
       - name: Verify signature
+        env:
+          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
         run: |
           echo "Verifying image signature with cosign..."
           echo "${TAGS}" | xargs -I {} cosign verify --key cosign.key {}@${DIGEST}
