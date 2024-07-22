@@ -26,3 +26,9 @@ spec:
             memory: "0"
       imagePullSecrets:
       - name: ghcr-secret
+      # Name of the kubernetes secret
+      # kubectl create secret docker-registry ghcr-secret \
+      #  --docker-server=ghcr.io \
+      # --docker-username=YOUR_GITHUB_USERNAME \
+      # --docker-password=YOUR_GITHUB_PAT \
+      # --docker-email=YOUR_EMAIL_ADDRESS
