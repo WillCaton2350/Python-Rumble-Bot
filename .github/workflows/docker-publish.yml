@@ -30,9 +30,9 @@ jobs:
 
       - name: Install cosign
         if: github.event_name != 'pull_request'
-        uses: sigstore/cosign-installer@v2.1.1
+        uses: sigstore/cosign-installer@v2.1.2  # Updated version
         with:
-          cosign-release: 'v2.1.1'
+          cosign-release: 'v2.1.2'  # Match with the action version
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3.0.0
