@@ -16,9 +16,11 @@ class node:
             print(f'node:{node} {i}')
 
 class binary_tree:
+    global stack
+    global result 
+    stack = []
+    result = []
     def main(self,root:node):
-        stack = []
-        result = []
         while root is not None or stack != []:
             while root is not None:
                 stack.append(root)
