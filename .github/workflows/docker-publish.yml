@@ -71,5 +71,5 @@ jobs:
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
           COSIGN_KEY: ${{ secrets.COSIGN_KEY }}  # Ensure this secret is set in GitHub Secrets
         run: |
-          echo "Signing image with cosign..."
+          echo "Signing img with cosign..."
           echo "${TAGS}" | xargs -I {} cosign sign --yes --key ${COSIGN_KEY} {}@${DIGEST}
