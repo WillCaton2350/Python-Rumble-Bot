@@ -1,26 +1,37 @@
-from config.data import urls, nums, locators, useragents, time_altered
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait as WDW
 from selenium.common.exceptions import NoSuchElementException
+from undetected_chromedriver.options import ChromeOptions
 from selenium.webdriver.common.by import By
+import undetected_chromedriver as uc
 from urllib.error import HTTPError
-from seleniumbase import Driver
 from random import randint
+from config.data import *
 import logging
+import ssl
 
-class web_driver():
+class web_driver:
     def __init__(self):
         self.driver = None
     
     def start_driver(self):
-        self.driver = Driver(uc=True)
+        ssl._create_default_https_context = ssl._create_unverified_context
+        options = ChromeOptions()
+        options.add_argument("--single-process")
+        options.add_argument("--headless")
+        options.add_argument("--incognito")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--disable-cache")
+        options.add_argument("--disable-blink-features=AutomationControlled")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--mute-audio")
+        self.driver = uc.Chrome(options=options)
         user_agent = useragents.ua.random
         self.driver.execute_cdp_cmd(
-        'Network.setUserAgentOverride', 
-        {'userAgent': user_agent})
-        print(user_agent)
+        f"Network.setUserAgentOverride",
+        {"userAgent":user_agent})
         return self.driver
-
+    
     def start_browser(self):
         for i in urls.url_dict:
             value = urls.url_dict[i]
@@ -35,7 +46,7 @@ class web_driver():
                         )))
                         self.driver.find_element(
                             By.XPATH,locators.play_btn_xpath).click()
-                        time_altered.time_buffer(1)
+                        time_altered.time_buffer(2)
                     except NoSuchElementException as err:
                         if err:
                             logging.error(f'NoSuchElementException: {err}')
@@ -49,7 +60,7 @@ class web_driver():
                         logging.info(f"Retrying in {nums.retry_delay} seconds...")
                         nums.retry_delay = self.fibonacci(nums.retry_delay)
                         nums.retries += 1
-
+    @staticmethod
     def fibonacci(n):
         if n <= 0:
             return []
@@ -67,5 +78,5 @@ class web_driver():
     n = 10  
     fibonacci_sequence = fibonacci(n)
 
-    def close_browser(self):
+    def quit_driver(self):
         self.driver.close()
