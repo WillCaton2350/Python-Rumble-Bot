@@ -1,5 +1,5 @@
 from bot.main import web_driver
-from config.data import *
+from config.data import nums
 
 class node:
     def __init__(self,_):
