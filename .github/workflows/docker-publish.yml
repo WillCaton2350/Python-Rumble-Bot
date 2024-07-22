@@ -1,10 +1,14 @@
 name: Docker Build and Sign
- 
+
 on:
   push:
     branches:
       - main
   workflow_dispatch:
+
+permissions:
+  packages: write
+  contents: read
 
 jobs:
   build-and-sign:
@@ -17,11 +21,6 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Set up Docker
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-
       - name: Build Docker image
         run: |
           docker build -t ghcr.io/willcaton2350/python-rumble-bot:main -f Python-Rumble-Bot-Final/Dockerfile Python-Rumble-Bot-Final/
@@ -31,7 +30,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GHCR_PAT }}
 
       - name: Install Cosign
         uses: sigstore/cosign-installer@v3.5.0
@@ -39,7 +38,11 @@ jobs:
           cosign-release: 'v2.2.4'
 
       - name: Save COSIGN_KEY to a file
-        run: echo "${{ secrets.COSIGN_KEY }}" > cosign.key
+        run: echo "${{ secrets.COSIGN_KEY }}" | base64 -d > cosign.key
+        shell: bash
+
+      - name: Set file permissions
+        run: chmod 600 cosign.key
         shell: bash
 
       - name: Sign image with Cosign
