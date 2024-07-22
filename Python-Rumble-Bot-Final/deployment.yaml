@@ -1,24 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bot-deployment
-  labels:
-    app: microservice
+  name: python-rumble-bot-deployment
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
-      app: microservice
+      app: python-rumble-bot
   template:
     metadata:
       labels:
-        app: microservice
+        app: python-rumble-bot
     spec:
       containers:
-      - name: microservice-container
-        image: python-selenium-rumble-bot:latest
+      - name: python-rumble-bot
+        image: ghcr.io/willcaton2350/python-rumble-bot:main
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         resources:
           requests:
             cpu: "0"
@@ -26,3 +24,5 @@ spec:
           limits:
             cpu: "0"
             memory: "0"
+      imagePullSecrets:
+      - name: ghcr-secret
