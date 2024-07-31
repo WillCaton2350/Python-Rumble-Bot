@@ -80,3 +80,13 @@ class web_driver:
 
     def quit_driver(self):
         self.driver.close()
+
+
+if __name__ == "__main__":
+    for i in range(nums.num_executions):
+        func = web_driver()
+        func.start_driver()
+        func.start_browser()
+        func.quit_driver()
+        print(f'node: web_driver activated')
+
