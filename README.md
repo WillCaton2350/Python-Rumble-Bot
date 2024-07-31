@@ -15,6 +15,7 @@ Virtual Environment: All program dependencies are contained within an active vir
 Usage
 
 Clone the repository. Set up a virtual environment (env). Activate the virtual environment. Install dependencies (requirements.txt). Run the script (root.py).
+If the requirements.txt file does not work, install dependencies individually with pip3 install ________. 
 
 Dependencies
 
@@ -27,3 +28,4 @@ selenium==4.17.2
 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+(USE THIS PROGRAM AT YOUR OWN RISK. I AM NOT RESPONSIBLE FOR COMPUTER FAILURES, PROGRAM CRASHES OR LEAGAL CONCERNS)
