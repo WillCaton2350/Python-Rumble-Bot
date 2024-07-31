@@ -60,7 +60,7 @@ class web_driver:
                         logging.info(f"Retrying in {nums.retry_delay} seconds...")
                         nums.retry_delay = self.fibonacci(nums.retry_delay)
                         nums.retries += 1
-    @staticmethod
+                        
     def fibonacci(n):
         if n <= 0:
             return []
