@@ -2,7 +2,7 @@
 
 This Python script automates browser interactions using Selenium WebDriver. It spins multiple browser instances attached to separate nodes on a binary tree.
 
-Features
+Features:
 
 Configuration Management: The data.py file handles configuration variables for each web driver, providing flexibility and ease of management.
 
@@ -12,16 +12,16 @@ SeleniumBase Integration: Utilizes the undetected Chrome driver from SeleniumBas
 
 Virtual Environment: All program dependencies are contained within an active virtual environment directory labeled env.
 
-Usage
+Usage:
 
 Clone the repository. Download the Python3.12 interpreter from the link below. Use the [ cd ] Mac/Windows command inside of the terminal to view and interact with the contents inside of the folder. Once inside the folder, set up a virtual environment (env) with [Python3 -m venv env] command on Mac/Windows. Now activate the virtual environment with the Mac command [source env/bin/activate] or the [env\Scripts\activate] Windows command in the terminal. Install the dependencies (requirements.txt). If the requirements.txt file does not work, install dependencies individually with pip3 install [____name of dependency___]. Finally run the script (root.py). All of this should be ran in the terminal (mac) or powershell (windows).
 
-Interpreter
+Interpreter:
 
 Python 3.12
 https://www.python.org/downloads/
 
-Dependencies
+Dependencies:
 
 seleniumbase==4.23.7
 
