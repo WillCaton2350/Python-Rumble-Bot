@@ -15,6 +15,8 @@ class nums:
 class urls:
     url_dict = {
     1:'',
+    2:'',
+    3:'',
     }
 
 class locators:
