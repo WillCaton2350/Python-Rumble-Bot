@@ -15,7 +15,7 @@ Virtual Environment: All program dependencies are contained within an active vir
 Usage
 
 Clone the repository. Set up a virtual environment (env) with [Python3 -m venv env] command on Mac and Windows. Activate the virtual environment with [source env/bin/activate] Mac command / on Windows the command is [env\Scripts\activate] . Install dependencies (requirements.txt). Run the script (root.py).
-If the requirements.txt file does not work, install dependencies individually with pip3 install ________. 
+If the requirements.txt file does not work, install dependencies individually with pip3 install [____name of dependency___]. 
 
 Dependencies
 
