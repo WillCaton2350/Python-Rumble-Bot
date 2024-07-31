@@ -16,7 +16,7 @@ Usage
 
 Clone the repository. Set up a virtual environment (env) with [Python3 -m venv env] command on Mac and Windows. Activate the virtual environment with the Mac command [source env/bin/activate] or the [env\Scripts\activate] Windows command in the terminal. Install the dependencies (requirements.txt). Run the script (root.py).
 If the requirements.txt file does not work, install dependencies individually with pip3 install [____name of dependency___]. 
-All of this can be ran in the terminal (mac) or powershell (windows)
+All of this can be ran in the terminal (mac) or powershell (windows).
 
 Interpreter
 
