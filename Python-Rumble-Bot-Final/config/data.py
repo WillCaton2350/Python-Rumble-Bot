@@ -1,5 +1,5 @@
-from dataclasses import dataclass
 from fake_useragent import UserAgent
+from dataclasses import dataclass
 from time import sleep
 
 @dataclass(frozen=True)
