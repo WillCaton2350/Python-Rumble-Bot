@@ -16,9 +16,21 @@ class web_driver():
         self.driver = None
     
     def start_driver(self):
-        self.driver = Driver(uc=True)
+        ssl._create_default_https_context = ssl._create_unverified_context
+        options = ChromeOptions()
+        options.add_argument("--disable-blink-features=AutomaionControlled")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--single-process")
+        options.add_argument("--disable-cache")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--mute-audio")
+        options.add_argument("--incognito")
+        options.add_argument("--headless")
+        self.driver = uc.Chrome(options=options)
         user_agent = useragents.ua.random
-        self.driver.execute_cdp_cmd('Network.setUserAgentOverride', {'userAgent': user_agent})
+        self.driver.execute_cdp_cmd(
+        'Network.setUserAgentOverride',
+        {'userAgent': user_agent})
         return self.driver
 
     def start_browser(self):
