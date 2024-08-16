@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-rumble-bot-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-rumble-bot
+  template:
+    metadata:
+      labels:
+        app: python-rumble-bot
+    spec:
+      containers:
+      - name: python-rumble-bot
+        image: ghcr.io/willcaton2350/python-rumble-bot:main
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "0"
+            memory: "0"
+          limits:
+            cpu: "0"
+            memory: "0"
+      imagePullSecrets:
+      - name: ghcr-secret
+      # Name of the kubernetes secret
+      # KUBECTL COMMAND TO CREATE THE KUBERNETES SECRET THAT WILL PULL THE DOCKER IMAGE FROM THE GHCR INTO THE KUBERNETES CLUSTER
+      # kubectl create secret docker-registry ghcr-secret \
+      #  --docker-server=ghcr.io \
+      # --docker-username=YOUR_GITHUB_USERNAME \
+      # --docker-password=YOUR_GITHUB_PAT \
+      # --docker-email=YOUR_EMAIL_ADDRESS
