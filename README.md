@@ -25,8 +25,6 @@ Dependencies:
 
 seleniumbase==4.23.7
 
-selenium==4.17.2
-
 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
