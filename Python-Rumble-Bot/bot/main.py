@@ -7,7 +7,6 @@ from selenium.webdriver.common.by import By
 import undetected_chromedriver as uc
 from urllib.error import HTTPError
 from random import randint
-from seleniumbase import Driver
 import logging
 import ssl
 
