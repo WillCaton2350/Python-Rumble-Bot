@@ -22,4 +22,4 @@ COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
 # Specifies the command to run when the Docker container starts.
-CMD ["python3", "root.py","--headless"]
+CMD ["python3", "root.py"]
