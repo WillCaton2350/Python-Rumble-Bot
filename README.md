@@ -23,10 +23,7 @@ https://www.python.org/downloads/
 
 Dependencies:
 
-selenium==4.17.2
-fake-useragent==1.5.1
-undetected-chromedriver==3.5.5
-seleniumbase==4.24.11
+see - requirements.txt
 
 License
 
