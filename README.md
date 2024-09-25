@@ -23,8 +23,7 @@ https://www.python.org/downloads/
 
 Dependencies:
 
-seleniumbase==4.23.7
-fake-useragent==1.5.1
+see - requirements.txt
 
 License
 
