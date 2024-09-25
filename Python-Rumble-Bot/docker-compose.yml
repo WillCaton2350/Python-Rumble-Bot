@@ -1,6 +1,0 @@
-version: '25.0'
-
-services:
-  selenium:
-    image: python-selenium-rumble-bot:latest
-    build: .
