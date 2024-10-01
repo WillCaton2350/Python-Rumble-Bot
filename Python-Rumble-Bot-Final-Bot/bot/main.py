@@ -12,7 +12,9 @@ class web_driver:
         self.driver = None
     
     def start_driver(self):
-        self.driver = Driver(uc=True)
+        self.driver = Driver(
+        uc=True,incognito=True,
+        headless=True,no_sandbox=True)
         user_agent = useragents.ua.random
         self.driver.execute_cdp_cmd(
         f"Network.setUserAgentOverride",
