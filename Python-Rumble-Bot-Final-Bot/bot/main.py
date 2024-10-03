@@ -40,10 +40,8 @@ class web_driver:
                 except NoSuchElementException as err:
                     if err:
                         logging.error(f'NoSuchElementException: {err}')
-
-            except HTTPError as err:
-                if err.code != 200:
-                    logging.error(f"HTTP error occurred: {err}")
+            except WebDriverException as err:
+                logging.error(err.msg)
         
         
     def close_browser(self):
