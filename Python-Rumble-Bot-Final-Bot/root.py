@@ -38,6 +38,7 @@ if __name__ == "__main__":
     try:
         instance = binary_tree()
         root = node(1)
+        instance.main(root=root)
     except KeyboardInterrupt:
         print("exiting gracefully...")
         exit(0)
