@@ -14,7 +14,8 @@ class web_driver:
     def start_driver(self):
         self.driver = Driver(
         uc=True,incognito=True,
-        no_sandbox=True,headless=True)
+        no_sandbox=True,headless=False
+        )
         user_agent = useragents.ua.random
         self.driver.execute_cdp_cmd(
         f"Network.setUserAgentOverride",
@@ -40,8 +41,7 @@ class web_driver:
                     if err:
                         logging.error(f'NoSuchElementException: {err}')
             except WebDriverException as err:
-                logging.error(err.msg)
-        
+                logging.error(f'ISSUE::err::WebDriver_Exception ::: {err.msg}')
         
     def close_browser(self):
         self.driver.quit()
