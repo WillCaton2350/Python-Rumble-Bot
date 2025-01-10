@@ -14,8 +14,6 @@ class node:
             func.start_browser()
             func.close_browser()
             
-
-
 class binary_tree:
     global stack
     global result
