@@ -11,8 +11,7 @@ class time_buffer:
 
 class urls:
     url_dict = {
-    1:'www.example.com/',
-    2:'',
+    1:'www.example.com/'
     }
 
 class locators:
